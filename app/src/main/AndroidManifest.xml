@@ -11,11 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Drawer"
         tools:targetApi="31">
+
         <activity android:name=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -26,6 +28,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.globe.drawer.tipcalculator.CalculatorActivity" />
+        <activity
+            android:name="com.globe.drawer.tipcalculator.CalculatorActivity"
+            android:icon="@drawable/ic_calculator"
+            android:label="Tip Calculator"/>
+
+        <activity
+            android:name="com.globe.drawer.movies.MovieDescriptionActivity"
+            android:icon="@drawable/ic_movies"
+            android:label="Movies"/>
+        <activity
+            android:name="com.globe.drawer.movies.MovieActivity"
+            android:icon="@drawable/ic_movies"
+            android:label="Movies"
+            />
+
     </application>
 </manifest>

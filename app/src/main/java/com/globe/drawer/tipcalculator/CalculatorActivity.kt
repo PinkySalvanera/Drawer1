@@ -25,6 +25,8 @@ class CalculatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tip_calculator)
 
+        // getActionBar().setHomeButtonEnabled(true)e
+
         evAmount = findViewById(R.id.evAmount)
         SBPercent = findViewById(R.id.SBPercent)
         tvTipPercent = findViewById(R.id.tvTipPercent)
@@ -83,13 +85,15 @@ class CalculatorActivity : AppCompatActivity() {
         var classification = when(percentage){
             in 0..9 -> "Poor"
             in 10..15 -> "Good"
+            in 15..20 -> "Great"
             else -> "Generous"
         }
         tvDescription.text = classification
 
         when (classification){
             in "Poor" -> tvDescription.setTextColor(Color.parseColor("#d63031")).toString()
-            in "Good" -> tvDescription.setTextColor(Color.parseColor("#00b894")).toString()
+            in "Good" -> tvDescription.setTextColor(Color.parseColor("#ff9f43")).toString()
+            in "Great" -> tvDescription.setTextColor(Color.parseColor("#00b894")).toString()
             else -> tvDescription.setTextColor(Color.parseColor("#0984e3")).toString()
         }
 

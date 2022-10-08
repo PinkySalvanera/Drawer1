@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.drawerlayout.widget.DrawerLayout
+import com.globe.drawer.movies.MovieActivity
 import com.globe.drawer.tipcalculator.CalculatorActivity
 import com.google.android.material.navigation.NavigationView
 
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //getActionBar().setHomeButtonEnabled(true)
 
         navigationView = findViewById(R.id.navView)
         navigationView.setNavigationItemSelectedListener(this)
@@ -62,6 +65,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.action_movies->{
                 Log.d("Main Activity", "Movies")
+                val movieIntent = Intent(this, MovieActivity::class.java)
+                startActivity(movieIntent)
                 }
 
             R.id.action_logout -> {

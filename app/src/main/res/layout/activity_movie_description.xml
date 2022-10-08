@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".movies.MovieDescriptionActivity">
+
+    <TextView
+        android:id="@+id/tvDPlot"
+        android:layout_width="383dp"
+        android:layout_height="255dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="Plot"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvDesPlotLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesPlotLabel" />
+
+    <TextView
+        android:id="@+id/tvDesCastLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cast"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvDesTitle"
+        app:layout_constraintTop_toBottomOf="@+id/rbDesRating" />
+
+    <TextView
+        android:id="@+id/tvDCast"
+        android:layout_width="375dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="Cast"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvDesCastLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesCastLabel" />
+
+    <TextView
+        android:id="@+id/tvDesPlotLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Plot"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvDesTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDCast" />
+
+    <ImageView
+        android:id="@+id/ivDesPoster"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/m1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="18dp"
+        android:text="Movie"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDesPoster" />
+
+    <RatingBar
+        android:id="@+id/rbDesRating"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/tvDesTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDYear" />
+
+    <TextView
+        android:id="@+id/tvDYear"
+        android:layout_width="42dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="tvYear"
+        app:layout_constraintStart_toStartOf="@+id/tvDesTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
