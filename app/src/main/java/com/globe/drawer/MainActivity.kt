@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.drawerlayout.widget.DrawerLayout
+import com.globe.drawer.tipcalculator.CalculatorActivity
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -48,20 +49,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             Log.d("Main Activity", "${item.title}")
             return true
         }
-        when(item.itemId){
-            R.id.action_calculator->{
-                Log.d("Main Activity", "Calculator")
-            }
-            R.id.action_movies->{
-            }
-        }
-
-
         return super.onOptionsItemSelected(item)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
+            R.id.action_calculator->{
+                Log.d("Main Activity", "Calculator")
+                val calcIntent = Intent(this, CalculatorActivity::class.java)
+                startActivity(calcIntent)
+                }
+
+            R.id.action_movies->{
+                Log.d("Main Activity", "Movies")
+                }
+
             R.id.action_logout -> {
                 Log.d("Main Activity", "Logout")
                 AlertDialog.Builder(this)
