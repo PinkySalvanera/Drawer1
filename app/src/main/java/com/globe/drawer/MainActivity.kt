@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //getActionBar().setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         navigationView = findViewById(R.id.navView)
         navigationView.setNavigationItemSelectedListener(this)
@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val email = getSharedPreferences(Constants.PREFERENCE_NAME, Context.MODE_PRIVATE)
             .getString(Constants.EMAIL, null)
@@ -52,11 +51,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             Log.d("Main Activity", "${item.title}")
             return true
         }
+
         return super.onOptionsItemSelected(item)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
+
+            androidx.appcompat.R.id.home->{
+                onBackPressed()
+            }
+
             R.id.action_calculator->{
                 Log.d("Main Activity", "Calculator")
                 val calcIntent = Intent(this, CalculatorActivity::class.java)

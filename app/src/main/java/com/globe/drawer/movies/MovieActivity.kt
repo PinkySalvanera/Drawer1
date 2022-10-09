@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.recyclerview.widget.RecyclerView
 import com.globe.drawer.Constants
 import com.globe.drawer.R
@@ -20,7 +21,7 @@ class MovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
 
-        //actionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         rvMovie = findViewById(R.id.rvMovies)
         initializeMovies()
@@ -32,6 +33,16 @@ class MovieActivity : AppCompatActivity() {
                 showMovieDetails(position)
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+            }
+        }
+        return true
     }
 
     private fun showMovieDetails(position: Int){

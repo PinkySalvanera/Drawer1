@@ -3,6 +3,7 @@ package com.globe.drawer.movies
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
@@ -24,7 +25,7 @@ class MovieDescriptionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_description)
 
-        //actionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         ivPoster = findViewById(R.id.ivDesPoster)
         tvTitle = findViewById(R.id.tvDesTitle)
@@ -50,4 +51,15 @@ class MovieDescriptionActivity : AppCompatActivity() {
         // Log.d("MovieDescriptionAct", "$plot")
 
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+            }
+        }
+        return true
+    }
+
 }

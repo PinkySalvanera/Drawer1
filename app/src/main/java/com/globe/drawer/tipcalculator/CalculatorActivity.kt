@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.TextView
@@ -25,7 +27,7 @@ class CalculatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tip_calculator)
 
-        // getActionBar().setHomeButtonEnabled(true)e
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         evAmount = findViewById(R.id.evAmount)
         SBPercent = findViewById(R.id.SBPercent)
@@ -37,6 +39,16 @@ class CalculatorActivity : AppCompatActivity() {
         addEditTextListener()
         addSeekbarListener()
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+            }
+        }
+        return true
     }
 
     private fun addEditTextListener() {
